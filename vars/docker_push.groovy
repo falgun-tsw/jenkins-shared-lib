@@ -7,4 +7,5 @@ def call(String image_name, String tag) {
   sh 'docker tag ${image_name} $dockerHubUser/${image_name}:${tag}'
   echo "pushing to docker"
   sh 'docker push $dockerHubUser/${image_name}:${tag}'
+  }
 }
