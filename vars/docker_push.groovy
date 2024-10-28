@@ -1,6 +1,6 @@
-def call(String dockerHubCred, String image_name, String tag) {
+def call(String image_name, String tag) {
   echo "pushing to docker hub"
-  withCredentials([usernamePassword(credentialsId: '${dockerHubCred}', usernameVariable: 'dockerHubUser', passwordVariable: 'dockerHubPass')]) {
+  withCredentials([usernamePassword(credentialsId: 'dockerHubCred', usernameVariable: 'dockerHubUser', passwordVariable: 'dockerHubPass')]) {
   echo "logging in docker"
   sh 'docker login -u $dockerHubUser -p $dockerHubPass'
   echo "tagging image"
