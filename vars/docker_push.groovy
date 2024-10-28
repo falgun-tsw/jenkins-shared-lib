@@ -1,6 +1,5 @@
 def call(String image_name, String tag) {
-  sh "echo ${tag}"
-  echo ${image_name}
+  sh "echo ${image_name}"
   echo "pushing to docker hub"
   withCredentials([usernamePassword(credentialsId: 'dockerHubCred', usernameVariable: 'dockerHubUser', passwordVariable: 'dockerHubPass')]) {
   echo "logging in docker"
