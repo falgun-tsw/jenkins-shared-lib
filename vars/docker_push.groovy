@@ -4,9 +4,10 @@ def call(String image_name, String tag) {
   echo "logging in docker"
   sh 'docker login -u $dockerHubUser -p $dockerHubPass'
   // echo "tagging image"
-  // sh 'docker image tag ${image_name} ${dockerHubUser}/${image_name}:${tag}'
+  // sh 'docker tag ${image_name} ${dockerHubUser}/${image_name}:${tag}'
   sh "echo ${dockerHubUser}"
+  sh "echo ${image_name}"
   echo "pushing to docker"
-  sh 'docker push ${dockerHubUser}/${image_name}:${tag}'
+  sh "docker push ${dockerHubUser}/${image_name}:${tag}"
   }
 }
